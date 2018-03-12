@@ -1,11 +1,15 @@
 const fetch = require("node-fetch");
 
 function sendToServer(data) {
-  console.log(data);
-  let serverData = { packet: data };
-  fetch("http://localhost:3000/serverdata", {
+  const d = new Date();
+  console.log(`
+  ===========Agent sent data to server===========\n\n
+  time: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}
+  transactions sent: ${JSON.stringify(data.transactions.length)}
+  `);
+  fetch("http://localhost:3000/api/agent/data/save", {
     method: "POST",
-    body: JSON.stringify(serverData),
+    body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" }
   })
     .then(data => {}) //fix this
