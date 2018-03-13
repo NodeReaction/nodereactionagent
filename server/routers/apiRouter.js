@@ -1,26 +1,41 @@
-'use strict';
+"use strict";
 
 // EXPRESS
-const express = require('express');
-const request = require('request');
+const express = require("express");
+const request = require("request");
 const router = express.Router();
 
 // CONTROLLERS
-const apiController = require('../controllers/apiController');
+const agentController = require("./../controllers/agentController");
+const applicationController = require("./../controllers/applicationController");
+const routeController = require("./../controllers/routeController");
+const traceController = require("./../controllers/traceController");
+const apiController = require("./../controllers/apiController");
 
 // ROUTES
-router.get('/getRoutes',
-  apiController.getRoutes,
+// AGENT - POSTS DATA TO SERVER
+router.post(
+  "/agent/data/save",
+  agentController.validate,
+  agentController.create,
   (req, res) => {
-    res.send(res.locals.routes);
+    res.end();
   }
 );
 
+// ROUTES
+router.get("/getData", apiController.getTransactions, (req, res) => {
+  res.json(res.locals.transactions);
+});
+router.get("/deleteData", apiController.deleteTransactions, (req, res) => {
+  res.json({ msg: "allset" });
+});
+
 // DEFAULT ROUTES
-router.all('*', (req, res, next) => {
-    err = new Error('apiRouter.js - default catch all route - not found');
-    err.status = 404;
-    next(err);
+router.all("*", (req, res, next) => {
+  err = new Error("apiRouter.js - default catch all route - not found");
+  err.status = 404;
+  next(err);
 });
 
 module.exports = router;
