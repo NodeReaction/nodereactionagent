@@ -1,5 +1,5 @@
-const Agent = require('./Agent');
-const httpLib = require("./libraries/http");
-const mongoLib = require("./libraries/mongo");
+const Agent = require("./lib/Agent");
+const httpLib = require("./lib/modules/http");
+const mongoLib = require("./lib/modules/mongo");
 
 module.exports = Agent;
