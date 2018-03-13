@@ -1,4 +1,5 @@
 // EXPRESS
+
 const express = require("express");
 const app = express();
 const PORT = 3000;
@@ -11,30 +12,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/dogs");
 
-// CONTROLLERS
-const agentController = require("./controllers/agentController");
-const apiController = require("./controllers/apiController");
+// ROUTERS
+const apiRouter = require("./routers/apiRouter");
 
 // API - ONLY TAKES JSON
 app.use(bodyParser.json());
 
-// AGENT - POSTS DATA TO SERVER
-app.post(
-  "/api/agent/data/save",
-  agentController.validate,
-  agentController.create,
-  (req, res) => {
-    res.end();
-  }
-);
-
 // ROUTES
-app.get("/api/getData", apiController.getTransactions, (req, res) => {
-  res.json(res.locals.transactions);
-});
-app.get("/api/deleteData", apiController.deleteTransactions, (req, res) => {
-  res.json({ msg: "allset" });
-});
+app.use('/api', apiRouter);
 
 // START EXPRESS
 app.listen(PORT, () => {
