@@ -50,7 +50,7 @@ agentController.create = (req, res, next) => {
     );
     trans.save((err, data) => {
       if (err) return console.log(err);
-      next();
+      console.log(`Transaction saved to database: ${data.route}`)
     });
   });
   next();
