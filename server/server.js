@@ -1,5 +1,5 @@
 // NRA - running the agent on this server for testing
-//const NRA = require("./../NodeReaction");
+const NRA = require("./../NodeReaction");
 
 // ENV FILES
 require("dotenv").config();
@@ -35,3 +35,4 @@ app.listen(PORT, () => {
     `===========NODE REACTION SERVER===========\n\nListening on port: ${PORT}`
   );
 });
+     
