@@ -1,5 +1,8 @@
-// NRA
-const NRA = require("./../NodeReaction");
+// NRA - running the agent on this server for testing
+//const NRA = require("./../NodeReaction");
+
+// ENV FILES
+require("dotenv").config();
 
 // EXPRESS
 const express = require("express");
@@ -14,6 +17,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/dogs");
 
+// MYSQL
+const connection = require('./dbconfig');
+
 // ROUTERS
 const apiRouter = require("./routers/apiRouter");
 
@@ -21,7 +27,7 @@ const apiRouter = require("./routers/apiRouter");
 app.use(bodyParser.json());
 
 // ROUTES
-app.use('/api', apiRouter);
+app.use("/api", apiRouter);
 
 // START EXPRESS
 app.listen(PORT, () => {
