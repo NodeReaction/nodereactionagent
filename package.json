@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
   "dependencies": {
+    "moment": "^2.21.0",
     "mysql": "^2.15.0",
     "node-fetch": "^2.1.1",
     "sqlstring": "^2.3.1",
