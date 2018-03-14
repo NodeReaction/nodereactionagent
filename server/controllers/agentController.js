@@ -7,41 +7,46 @@ const agentController = {};
 
 agentController.validate = (req, res, next) => {
   next();
-}
+};
 
 agentController.create = (req, res, next) => {
   const transactions = req.body.transactions;
   const d = new Date();
   console.log(`
-    ===========Server received data from Agent===========
+    ===========Server received data from Agent===========\n
     time: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}
     transactions sent: ${JSON.stringify(transactions.length)}
     `);
 
-    transactions.forEach(transaction => {
-        //console.log(JSON.stringify(transaction));
-        const applicationId = 9
-        sql.query(
-            sqlstring.format(
-              "INSERT INTO transactions (route,method,application_id,) VALUES (?,?,?)",
-              [transaction.route, transaction.method, applicationId]
-            ),
-            function(error, results, fields) {
-              if (error) {
-                // let err = new Error('Database Error');
-                // err.functionName = 'agentController.create';
-                // err.status = 400;
-                console.log('db error ======', error)
-                next(error);
-              }
-              console.log('database save: ', results);
-              //res.locals.id = results.insertId;
-            }
-          );
-      });
+  transactions.forEach(transaction => {
+   // console.log('=========================\n' + JSON.stringify(transaction) + '=========================\n');
+    const applicationId = 9;
+    sql.query(
+      sqlstring.format(
+        "INSERT INTO transactions (application_id, route, method, user_agent, cookies, remote_address, start_timestamp, end_timestamp, duration) VALUES (?,?,?,?,?,?,?,?,?)",
+        [
+          applicationId,
+          transaction.route,
+          transaction.method,
+          transaction.userAgent,
+          transaction.cookies,
+          transaction.remoteAddress,
+          transaction.traceTimer.startTimestamp,
+          transaction.traceTimer.endTimestamp,
+          transaction.traceTimer.duration
+        ]
+      ),
+      function(error, results, fields) {
+        if (error) {
+          console.log("database error: ", error);
+          next(error);
+        }
+        console.log("database save: ", results.insertId);
+      }
+    );
+  });
 
-    
-      next();
+  next();
 };
 
 module.exports = agentController;
