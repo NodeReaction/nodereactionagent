@@ -3,6 +3,8 @@ const mongo = require("mongodb-core");
 
 let original = mongo.Server.prototype.insert;
 let library = "MongoDB";
+//mongo insert 'Server' callback is the last parameter
+let original = mongo.Server.prototype.insert;
 
 mongo.Server.prototype.insert = function () {
   if (arguments.length > 0) {
@@ -21,7 +23,7 @@ mongo.Server.prototype.insert = function () {
 
   return original.apply(this, arguments);
 };
-
+//mongo _find 'Cursor' callback is the first parameter
 let findOriginal = mongo.Cursor.prototype._find;
 
 mongo.Cursor.prototype._find = function () {
@@ -42,7 +44,7 @@ mongo.Cursor.prototype._find = function () {
 
   return findOriginal.apply(this, arguments);
 };
-
+//mongo update 'Server' callback is the last parameter
 let updateOriginal = mongo.Server.prototype.update
 
 mongo.Server.prototype.update = function () {
@@ -60,7 +62,7 @@ mongo.Server.prototype.update = function () {
   }
   return updateOriginal.apply(this, arguments);
 }
-
+//mongo remove 'Server' callback is the last parameter
 let removeOriginal = mongo.Server.prototype.remove
 
 mongo.Server.prototype.remove = function () {
@@ -79,7 +81,7 @@ mongo.Server.prototype.remove = function () {
   return removeOriginal.apply(this, arguments);
 }
 
-
+//mongo auth 'Server' callback is the last parameter
 let authOriginal = mongo.Server.prototype.auth
 
 mongo.Server.prototype.auth = function () {
@@ -97,7 +99,7 @@ mongo.Server.prototype.auth = function () {
   }
   return authOriginal.apply(this, arguments);
 }
-
+//mongo _getmore 'Cursor' callback is the first parameter
 let getMoreOriginal = mongo.Cursor.prototype._getmore;
 
 mongo.Cursor.prototype._getmore = function () {
@@ -117,3 +119,5 @@ mongo.Cursor.prototype._getmore = function () {
 
   return getMoreOriginal.apply(this, arguments);
 };
+
+module.exports = mongoLib
