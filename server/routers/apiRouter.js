@@ -33,7 +33,7 @@ router.get("/deleteData", apiController.deleteTransactions, (req, res) => {
 
 // DEFAULT ROUTES
 router.all("*", (req, res, next) => {
-  err = new Error("apiRouter.js - default catch all route - not found");
+  const err = new Error(`apiRouter.js - default catch all route - not found - ${req.url}`);
   err.status = 404;
   next(err);
 });

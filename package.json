@@ -11,9 +11,21 @@
     "url": "git+https://github.com/retrowavelabs/nodereactionagent.git"
   },
   "keywords": [
-    "node",
+    "nodereaction",
     "analysis",
-    "performance"
+    "apm",
+    "async",
+    "deploy",
+    "deploying",
+    "deployment",
+    "devops",
+    "log",
+    "logging",
+    "monitor",
+    "monitoring",
+    "performance",
+    "ops",
+    "release"
   ],
   "author": "Retro Wave Labs",
   "license": "MIT",
@@ -22,12 +34,18 @@
   },
   "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
   "dependencies": {
+    "mysql": "^2.15.0",
+    "node-fetch": "^2.1.1",
+    "sqlstring": "^2.3.1",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "mongodb-core": "^3.0.4",
     "mongoose": "^5.0.9",
     "nodemon": "^1.17.1",
     "path": "^0.12.7",
-    "request": "^2.85.0",
-    "uuid": "^3.2.1"
+    "request": "^2.85.0"
   }
 }
