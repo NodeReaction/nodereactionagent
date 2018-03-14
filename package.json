@@ -34,10 +34,13 @@
   },
   "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
   "dependencies": {
+    "mysql": "^2.15.0",
     "node-fetch": "^2.1.1",
+    "sqlstring": "^2.3.1",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "mongodb-core": "^3.0.4",
     "mongoose": "^5.0.9",
