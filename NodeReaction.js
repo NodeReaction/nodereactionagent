@@ -1,5 +1,4 @@
 const Agent = require("./lib/Agent");
-const httpLib = require("./lib/modules/http");
-const mongoLib = require("./lib/modules/mongo");
-
+// loads libraries based on package.json and availible modules
+const libraries = require("./lib/LibraryLoader");
 module.exports = Agent;
