@@ -34,9 +34,11 @@
   },
   "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "mongodb-core": "^3.0.5",
     "mysql": "^2.15.0",
     "node-fetch": "^2.1.1",
+    "path": "^0.12.7",
     "sql-summary": "^1.0.0",
     "uuid": "^3.2.1"
   },
