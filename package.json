@@ -1,43 +1,15 @@
 {
-  "_from": "nodereactionagent@0.0.3",
-  "_id": "nodereactionagent@0.0.3",
-  "_inBundle": false,
-  "_integrity": "sha512-qmD9KcEVTUcVnREZZ0b5sPjyrZ0wbEGUOMO5iiUFZKUHwJnx3dyQIQ24wWJy1AeGJX0kLqa1wn1E+L0ETzvg6g==",
-  "_location": "/nodereactionagent",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "nodereactionagent@0.0.3",
-    "name": "nodereactionagent",
-    "escapedName": "nodereactionagent",
-    "rawSpec": "0.0.3",
-    "saveSpec": null,
-    "fetchSpec": "0.0.3"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/nodereactionagent/-/nodereactionagent-0.0.3.tgz",
-  "_shasum": "9b8efc2f8edce0987dadf24a4bba21db7cb5f908",
-  "_spec": "nodereactionagent@0.0.3",
-  "_where": "/Users/ericfileti/Documents/Codesmith/assessments/app-assessment-mod-0",
-  "author": {
-    "name": "Retro Wave Labs"
-  },
-  "bugs": {
-    "url": "https://github.com/retrowavelabs/nodereactionagent/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "moment": "^2.21.0",
-    "node-fetch": "^2.1.1",
-    "uuid": "^3.2.1"
-  },
-  "deprecated": false,
+  "name": "nodereactionagent",
+  "version": "0.0.7",
   "description": "NodeReaction Agent is node application monitoring tool",
-  "devDependencies": {},
-  "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
+  "main": "NodeReaction.js",
+  "scripts": {
+    "start": "node NodeReaction.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retrowavelabs/nodereactionagent.git"
+  },
   "keywords": [
     "nodereaction",
     "analysis",
@@ -55,13 +27,20 @@
     "ops",
     "release"
   ],
+  "author": "Retro Wave Labs",
   "license": "MIT",
-  "main": "NodeReaction.js",
-  "name": "nodereactionagent",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/retrowavelabs/nodereactionagent.git"
+  "bugs": {
+    "url": "https://github.com/retrowavelabs/nodereactionagent/issues"
   },
-  "scripts": {},
-  "version": "0.0.3"
+  "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mongodb-core": "^3.0.5",
+    "mysql": "^2.15.0",
+    "node-fetch": "^2.1.1",
+    "path": "^0.12.7",
+    "sql-summary": "^1.0.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {}
 }
