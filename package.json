@@ -1,7 +1,7 @@
 {
   "name": "nodereactionagent",
-  "version": "0.1.8",
-  "description": "NodeReaction Agent is node application monitoring tool",
+  "version": "0.1.9",
+  "description": "NodeReaction Agent is node application performance monitoring tool",
   "main": "NodeReaction.js",
   "scripts": {
     "start": "node NodeReaction.js"
