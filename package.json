@@ -1,6 +1,6 @@
 {
   "name": "nodereactionagent",
-  "version": "0.0.8",
+  "version": "0.1.8",
   "description": "NodeReaction Agent is node application monitoring tool",
   "main": "NodeReaction.js",
   "scripts": {
@@ -34,11 +34,9 @@
   },
   "homepage": "https://github.com/retrowavelabs/nodereactionagent#readme",
   "dependencies": {
-    "fs": "0.0.1-security",
-    "mongodb-core": "^3.0.5",
-    "mysql": "^2.15.0",
     "node-fetch": "^2.1.1",
     "path": "^0.12.7",
+    "semver": "^5.5.0",
     "sql-summary": "^1.0.0",
     "uuid": "^3.2.1"
   },
