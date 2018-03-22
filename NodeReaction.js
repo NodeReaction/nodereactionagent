@@ -1,6 +1,6 @@
 const d = new Date(Date.now()).toISOString().slice(0, 23).replace("T", " ");
 console.log(`
-=========== Node Reaction Agent 0.2.7 ===========\n
+=========== Node Reaction Agent 0.2.8 ===========\n
 time data sent: ${d}
 `);
 const Agent = require("./lib/Agent");
