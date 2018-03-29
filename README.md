@@ -10,13 +10,17 @@ $ npm install nodereactionagent
 ```
 
 ## Agent Configuration Options
+Default confguration:
+```shell
+const NRA = require('nodereactinoagent').setApiToken('TokenFromNodeReaction.com');
+```
 ### Set Agent URL
-The agent is set up to post to our cloud servers, however, the agent can post to a URL of your choosing by passing in a url. 
+The agent is set up to post to our cloud servers, however, the agent can post to a URL of your choosing. 
 ```shell
 NRA.setAgentUrl('localhost:3000/YourEndPoint');
 ```
 ### Post Transactions to Server
-The agent can be prevented from posting any information to our servers and simple be used as a screen logger or to log information to a file.
+The agent can be prevented from posting any information to servers and can be used as a screen logger or to log information to a file.
 ```shell
 NRA.sendTransactionsToServer(false); // defaults: true;
 ```
@@ -38,22 +42,21 @@ You can use Node Reaction Agent in your any of your own async functions that occ
 ```shell
 const nodeReactionAgent = require("../Agent.js");
 
+// add this line when you want the trace to starts
  let trace = nodeReactionAgent.createTrace('ModuleName', 'FunctionName');
-    const index = arguments.length - 1;
-    const cb = arguments[index];
-    if (typeof cb === "function") {
-        arguments[index] = function () {
-            //end trace in the callback;
-            if(trace) trace.end()
-            return cb.apply(this, arguments);
-        }
-    }
 
-NRA.saveLogToDisk(true, pathToSave); // defaults: false and project root folder
+
+            // add this line when async function completes;
+ 
 ```
 
 ## Adding a module
-You can write your own modules for Node Reaction to further extend it's utility. We welcome contributions.
+You can write your own modules for Node Reaction to further extend it's utility. 
+
+
+## Contributions
+We welcome contributions. Please submit issues [nodereaction@gmail.com](mailto:nodereaction@gmail.com)
+
 
 
 ## Authors
