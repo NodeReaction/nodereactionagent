@@ -10,24 +10,24 @@ $ npm install nodereactionagent
 ```
 
 ## Agent Configuration Options
-###Set Agent URL
+### Set Agent URL
 The agent is set up to post to our cloud servers, however, the agent can post to a URL of your choosing by passing in a url. 
 ```shell
 NRA.setAgentUrl('localhost:3000/YourEndPoint');
 ```
-###Post Transactions to Server
+### Post Transactions to Server
 The agent can be prevented from posting any information to our servers and simple be used as a screen logger or to log information to a file.
 ```shell
 NRA.sendTransactionsToServer(false); // defaults: true;
 ```
 
-###Save logs to disk
+### Save logs to disk
 The agent can optionally save logs to disk with the following command. 
 ```shell
 NRA.saveLogToDisk(true, pathToSave); // defaults: false and project root folder
 ```
 
-###Log to Screen
+### Log to Screen
 ```shell
 NRA.saveLogToDisk(true, pathToSave); // defaults: false and project root folder
 ```
