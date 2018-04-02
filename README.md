@@ -3,9 +3,9 @@
 
 ## Overview
 
-NodeReaction is an open source performance monitoring framework (referred to as the Node Reaction Agent), which lives in user code to analyzes http requests and asynchronous operations while working in conjunction with a cloud service that processes and analyzes information the agent gathers. NodeReaction.com is the service that provides a detailed performance breakdown of a developer’s  Node.js web applications. 
+NodeReactionAgent is an open source performance monitoring framework, included in application code to analyzes http requests and asynchronous operations while working in conjunction with a cloud service NodeReaction.com to store  analyze and display information the agent gathers. 
 
-With a single line of code, developers can see the performance and health of their Node application's async operations, and understand where bottlenecks exist in their application. 
+NodeReaction.com provides a detailed performance breakdown of a developer’s Node.js web applications and better understand where bottlenecks exist in their application. 
 
 ## Installation
 Using npm:
@@ -16,7 +16,7 @@ $ npm install nodereactionagent
 ## Agent Configuration Options
 Default confguration (place on line 1 of your server.js):
 ```shell
-const NRA = require('nodereactinoagent').setApiToken('TokenFromNodeReaction.com');
+const NRA = require('nodereactionagent').setApiToken('TokenFromNodeReaction.com');
 ```
 ### Set Agent URL
 The agent is set up to post to our cloud servers, however, the agent can post to a URL of your choosing. 
@@ -37,7 +37,7 @@ NRA.saveLogToDisk(true, pathToSave); // defaults: false and project root folder
 
 ### Log to Screen
 ```shell
-NRA.saveLogToDisk(true, pathToSave); // defaults: false and project root folder
+NRA.logToScreen(true); // defaults: true
 ```
 
 ## Overriding your own Async Functions
@@ -47,11 +47,11 @@ You can use Node Reaction Agent in your any of your own async functions that occ
 const nodeReactionAgent = require("../Agent.js");
 
 // add this line when you want the trace to starts
- let trace = nodeReactionAgent.createTrace('ModuleName', 'FunctionName');
+let trace = nodeReactionAgent.createTrace('ModuleName', 'FunctionName');
 
 
-            // add this line when async function completes;
- 
+// add this line when async function completes;
+trace.end();
 ```
 
 ## Adding a module
