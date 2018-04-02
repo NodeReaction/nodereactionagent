@@ -3,6 +3,10 @@
 
 ## Overview
 
+NodeReaction is an open source performance monitoring framework (referred to as the Node Reaction Agent), which lives in user code to analyzes http requests and asynchronous operations while working in conjunction with a cloud service that processes and analyzes information the agent gathers. NodeReaction.com is the service that provides a detailed performance breakdown of a developer’s  Node.js web applications. 
+
+With a single line of code, developers can see the performance and health of their Node application's async operations, and understand where bottlenecks exist in their application. 
+
 ## Installation
 Using npm:
 ```shell
@@ -10,7 +14,7 @@ $ npm install nodereactionagent
 ```
 
 ## Agent Configuration Options
-Default confguration:
+Default confguration (place on line 1 of your server.js):
 ```shell
 const NRA = require('nodereactinoagent').setApiToken('TokenFromNodeReaction.com');
 ```
